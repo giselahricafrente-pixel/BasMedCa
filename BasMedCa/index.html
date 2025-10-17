@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BasMedCa-Basic Medical Care</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="#" class="navbar-brand" id="homeNavBtn">
+          <img src="logo.png" class="navbar-logo" / alt="" srcset="" width="40">
+          BasMedCa
+        </a>
+        <ul class="nav-links">
+          <li><a href="#" id="dashboardNavBtn">Dashboard <span class="translation">(Dashboard)</span></a></li>
+          <li><a href="#" id="aboutNavBtn">About <span class="translation">(Maipapan)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Page -->
+    <section id="heroPage" class="page active">
+      <div class="container hero-container">
+        <h1>BasMedCa</h1>
+        <p>Your Personal Health Companion <span class="translation">(Ang Iyong Personal na Kaibigan Pagdating sa Kalusugan)</span></p>
+        <p class="mission-vision">
+          <strong>Mission:</strong> Our Vision. <span class="translation">(Ti Misyon: Ti Panagrugim.)</span> <br />
+          <strong>Vision:</strong> Our Mission. <span class="translation">(Ti Panagdangad: Ti Misyon.)</span>
+        </p>
+        <p class="disclaimer">
+          Disclaimer: We’re not medical professionals. The info here is only for basic knowledge about common medicine and simple emergencies. For serious conditions, emergencies, or medicine dosages, always talk to your doctor. <br/> 
+          <span class="translation">(Disclaimer: Saan kami a propesyonal nga mang-agas. Ti impormasyon ditoy ket para laeng iti basit a pannakaammo maipanggep kadagiti agas ken simple a emergcy. No seryoso ti sakit wenno kasapulan ti eksaktong dosage ti agas, agpatingga iti doktor mo.)</span>
+        </p>
+        <button id="getStartedBtn" class="btn-primary">Get Started <span class="translation">(Mangrugi)</span></button>
+      </div>
+    </section>
+ 
+    <!-- Dashboard Page -->
+    <section id="dashboardPage" class="page">
+      <div class="container dashboard-container">
+        <h2>Welcome to BasMedCa Dashboard <span class="translation">(Naawat ka iti BasMedCa Dashboard)</span></h2>
+        <p id="welcomeUser" class="welcome-text"></p>
+        <div class="feature-cards">
+          <div class="feature-card" data-feature="alarms">
+            <i class="fas fa-bell"></i>
+            <h3>Medicine Alarms <span class="translation">(Para Palagip iti Oras ti Panagtumar)</span></h3>
+          </div>
+          <div class="feature-card" data-feature="dictionary">
+            <i class="fas fa-book-medical"></i>
+            <h3>Medicine Dictionary <span class="translation">(Diksyonaryo ti Agas)</span></h3>
+          </div>
+          <div class="feature-card" data-feature="emergency">
+            <i class="fas fa-ambulance"></i>
+            <h3>Emergency Guide <span class="translation">(Bayabay para iti Saan nga Mapakpakadaan a Pasamak)</span></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Detail Pages -->
+    <section id="featureDetailPage" class="page">
+      <div class="container feature-detail-container">
+        <button id="exitFeatureBtn" class="btn-exit"><i class="fas fa-times"></i> Back <span class="translation">(Agsubli)</span></button>
+        <h2 id="featureDetailHeading" style="color:#0077b6; text-align:center; margin-bottom: 25px;"></h2>
+        <p id="featureDetailHeadingTranslation" style="text-align:center;"></p>
+
+        <!-- Medicine Alarms Feature HTML -->
+        <div id="alarmsFeature" class="feature-section" style="display: none;">
+          <div class="alarm-form-grid">
+            <input type="text" id="medicineName" placeholder="Medicine Name" class="alarm-input" />
+            <input type="time" id="alarmTime" class="alarm-input" />
+            <select id="frequency" class="alarm-select">
+              <option value="daily">Daily <span class="translation">(Inaldaw-aldaw)</span></option>
+              <option value="weekly">Weekly <span class="translation">(Linawas)</span></option>
+              <option value="custom">Custom <span class="translation">(Personalisado)</span></option>
+            </select>
+            <button id="addAlarmBtn" class="btn-primary alarm-btn">Set Alarm <span class="translation">(I-set ti Alarma)</span></button>
+          </div>
+          <div id="alarmList" class="alarm-list"></div>
+          <p class="main-text-large" style="text-align:center; margin-top: 20px; color: #333;">Alarms will play a loud beep sound to remind you. <span class="translation">(A loud sound will help you hear the reminder.) (Adda loud sound a tulongentayo a mangrugit.)</span></p>
+        </div>
+
+        <!-- Medicine Dictionary Feature HTML -->
+        <div id="dictionaryFeature" class="feature-section" style="display: none;">
+          <div class="search-wrapper">
+            <input type="text" id="medicineSearch" placeholder="Search for medicines..." class="search-box" />
+            <p class="search-translation">Search for medicines... <span class="translation">(Agbiruk ti agas...)</span></p>
+          </div>
+          <div id="medicineList" class="medicine-list"></div>
+        </div>
+
+        <!-- Emergency Guide Feature HTML -->
+        <div id="emergencyFeature" class="feature-section" style="display: none;">
+          <div class="search-wrapper">
+            <input type="text" id="emergencySearch" placeholder="Search emergencies..." class="search-box" />
+            <p class="search-translation">Search emergencies... <span class="translation">(Agbiruk ti emerhensya...)</span></p>
+          </div>
+          <div id="emergencyList" class="emergency-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="aboutPage" class="page">
+      <div class="container about-container">
+        <h2>About BasMedCa <span class="translation">(Maipapan ti BasMedCa)</span></h2>
+
+        <h3>Our Purpose <span class="translation">(Ti Panggep Mi)</span></h3>
+        <p>BasMedCa aims to provide basic medical care assistance through digital tools. Our goal is to empower individuals to manage their health more effectively by offering features like medicine reminders, a medical dictionary, and an emergency guide. <span class="translation">(Mangaim ti BasMedCa a mangipresenta ti basic medical care assistance babaen ti digital tools. Ti pakpakda mi ket a mangpasingked iti tao a manage ti kinasigudda a naimbag babaen ti panagoFFER ti features a kas medicine reminders, a medical dictionary, ken emergency guide.)</span></p>
+
+        <h3>The Developers <span class="translation">(Dagiti Nangaramid)</span></h3>
+        <div class="developer-info">
+          <p><strong>Eizel Zaila A. Dugay</strong></p>
+          <p><strong>Frances Seah A. Filog</strong></p>
+          <p><strong>Maya Beanca R. Libantino</strong></p>
+          <p><strong>Dhezza Mae B. Natabio</strong></p>
+          <p><strong>Giselah Mariam A. Ricafrente</strong></p>
+        </div>
+        <button id="exitAboutBtn" class="btn-secondary" style="margin-top: 20px;">Exit to Dashboard <span class="translation">(Rumuar iti Dashboard)</span></button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Emergency Hotlines Bar -->
+  <footer class="emergency-contacts" id="emergencyFooter">
+    <div class="contacts-container">
+      <h3 id="emergencyHotlinesToggle" role="button" tabindex="0" aria-expanded="false">
+        <i class="fas fa-phone-alt"></i> Emergency Hotlines <span class="translation">(Agiti Matawagan nu Adda Ti Pasamek)</span>
+        <i class="fas fa-chevron-down"></i>
+      </h3>
+      <div id="hotlinesContent" class="hotlines-content" aria-hidden="true">
+        <!-- Hotline numbers dynamically inserted by JS -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

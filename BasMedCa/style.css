@@ -1,0 +1,897 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #90e0ef 100%);
+  color: #2d3748;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* NEW: Translation Styles - Consistent for all bilingual elements */
+.translation {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-left: 5px;
+}
+.search-translation {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.95em;
+  color: #023e8a;
+}
+.search-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0077b6;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.navbar-brand {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #caf0f8;
+}
+.nav-links .translation {
+  color: #caf0f8;
+  font-size: 0.85em;
+}
+
+/* Pages */
+.page {
+  display: none;
+  min-height: 100vh;
+  padding-top: 90px;
+  padding-bottom: 80px;
+  transition: padding-bottom 0.3s ease;
+}
+.page.active {
+  display: block;
+}
+body.footer-expanded .page {
+  padding-bottom: 200px;
+}
+
+/* Generic Feature Section Styles */
+.feature-section {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Page */
+.hero-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero-container h1 {
+  font-size: 4rem;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+.hero-container p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.mission-vision {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  color: #023e8a;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  min-width: 180px;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.btn-primary {
+  background-color: #0077b6;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0096c7;
+}
+.btn-secondary {
+  background-color: #90e0ef;
+  color: #0077b6;
+  margin-top: 20px;
+}
+.btn-secondary:hover {
+  background-color: #caf0f8;
+}
+
+/* Auth Page */
+.auth-container {
+  text-align: center;
+}
+.auth-forms {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.auth-form {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 320px;
+}
+.auth-form h3 {
+  margin-bottom: 20px;
+  color: #0077b6;
+}
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  border: 2px solid #90e0ef;
+  border-radius: 10px;
+}
+.auth-form button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+}
+
+/* Dashboard */
+.dashboard-container {
+  text-align: center;
+}
+.welcome-text {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #0077b6;
+}
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.feature-card {
+  background: white;
+  width: 250px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+.feature-card i {
+  font-size: 3.5rem;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #0077b6;
+}
+
+/* Feature Detail Page */
+.feature-detail-container {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.btn-exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-exit:hover {
+  background: #d62828;
+}
+.btn-exit i {
+  font-size: 1rem;
+}
+
+/* Search Box */
+.search-box {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  border: 2px solid #90e0ef;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.search-box:focus {
+  border-color: #0077b6;
+}
+
+/* === Medicine Alarms Styles === */
+.alarm-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.alarm-input,
+.alarm-select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #90e0ef;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.alarm-btn {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+.alarm-btn:hover {
+  background: #0096c7;
+}
+
+.alarm-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #90e0ef;
+  padding-top: 15px;
+}
+
+.alarm-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #90e0ef;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.alarm-time {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0077b6;
+}
+
+.alarm-medicine-info {
+  font-size: 1rem;
+  color: #023e8a;
+}
+
+.deleteAlarmBtn {
+  background: #e63946;
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.deleteAlarmBtn:hover {
+  background: #d62828;
+}
+
+/* === Medicine Dictionary Styles === */
+.medicine-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border-top: 1px solid #90e0ef;
+  padding-top: 15px;
+}
+
+.medicine-category {
+  margin-bottom: 20px;
+  border: 1px solid #90e0ef;
+  border-radius: 12px;
+  background-color: #f0f8ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.category-header {
+  cursor: pointer;
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0077b6;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-header:hover {
+  background-color: #e0f2f7;
+}
+
+.category-content {
+  padding: 10px 20px 20px 20px;
+  display: block; /* Always shown for filtered results */
+}
+
+.medicine-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0f2f7;
+  color: #023e8a;
+}
+
+.medicine-item h4 {
+  margin-bottom: 5px;
+  color: #0077b6;
+  font-size: 1.2rem;
+}
+
+.medicine-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.medicine-item .translation {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* === Emergency Guide Styles === */
+.emergency-list {
+  max-height: 450px;
+  overflow-y: auto;
+  border-top: 1px solid #90e0ef;
+  padding-top: 15px;
+}
+
+.emergency-card {
+  border: 1px solid #90e0ef;
+  border-radius: 12px;
+  background-color: #f0f8ff;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+.emergency-card:hover {
+  background-color: #e0f2f7;
+}
+
+.emergency-card h3 {
+  color: #0077b6;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.emergency-card .translation {
+  font-size: 1rem;
+  color: #023e8a;
+}
+
+.emergency-steps {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.emergency-steps ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.emergency-steps li {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.emergency-steps li .step-text {
+  margin-bottom: 8px;
+}
+
+.emergency-steps li .step-translation {
+  font-style: italic;
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.step-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  align-self: center;
+}
+
+/* Emergency Hotlines Bar */
+.emergency-contacts {
+  background-color: #0077b6;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
+  transition: padding-bottom 0.3s ease;
+}
+.emergency-contacts .contacts-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+#emergencyHotlinesToggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+#emergencyHotlinesToggle:hover,
+#emergencyHotlinesToggle:focus {
+  color: #caf0f8;
+}
+#emergencyHotlinesToggle i.fa-chevron-down {
+  transition: transform 0.3s ease;
+}
+#emergencyHotlinesToggle[aria-expanded="true"] i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+.hotlines-content {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  padding: 0 10px;
+  opacity: 0;
+}
+.hotlines-content[aria-hidden="false"] {
+  opacity: 1;
+  padding-bottom: 15px;
+}
+.contact-item {
+  background-color: #f0f8ff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 2px solid #90e0ef;
+  min-width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: #023e8a;
+}
+.contact-item:hover {
+  background-color: #e0f2f7;
+  transform: translateY(-3px);
+}
+.contact-item strong {
+  color: #0077b6;
+  display: block;
+  margin-bottom: 5px;
+}
+.contact-item a {
+  color: #023e8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .emergency-contacts {
+    padding: 8px 0;
+  }
+  #emergencyHotlinesToggle {
+    font-size: 1rem;
+    gap: 8px;
+  }
+  .hotlines-content {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-item {
+    min-width: 120px;
+  }
+  body.footer-expanded {
+    padding-bottom: 250px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  .hero-container h1 {
+    font-size: 3rem;
+  }
+  .hero-container p {
+    font-size: 1.2rem;
+  }
+  .auth-forms {
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-form {
+    width: 90%;
+  }
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-card {
+    width: 90%;
+  }
+  .page {
+    padding-top: 120px;
+  }
+
+  /* Alarm layout for mobile */
+  .alarm-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alarm-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .alarm-item > div:first-child {
+    width: 100%;
+  }
+
+  .deleteAlarmBtn {
+    align-self: flex-end;
+  }
+
+   /* Button adjustments for mobile */
+  .btn-primary,
+  .btn-secondary,
+  .btn-exit {
+    min-width: unset; /* Remove fixed min-width on small screens */
+    width: 100%; /* Make them full width */
+    padding: 12px 20px; /* Slightly smaller padding */
+    font-size: 1rem; /* Slightly smaller font size */
+  }
+  .btn-exit {
+    position: static; /* Remove absolute positioning for better flow on small screens */
+    margin-bottom: 20px; /* Add some space below it */
+  }
+
+  /* NEW: Mobile adjustments for Medicine Dictionary */
+  .medicine-category {
+    margin-bottom: 15px; /* Reduce spacing */
+  }
+  .category-header {
+    padding: 12px 15px; /* Smaller padding */
+    font-size: 1.1rem; /* Slightly smaller font */
+    flex-direction: column; /* Stack header elements vertically if needed */
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .category-content {
+    padding: 8px 15px 15px 15px; /* Smaller padding */
+  }
+  .medicine-item {
+    padding: 8px 0; /* Reduce item padding */
+  }
+  .medicine-item h4 {
+    font-size: 1.1rem; /* Smaller heading */
+  }
+  .medicine-item p {
+    font-size: 1rem; /* Smaller text */
+  }
+  .medicine-list {
+    max-height: 300px; /* Reduce max-height for mobile viewport */
+  }
+
+  /* NEW: Mobile adjustments for Emergency Guide */
+  .emergency-card {
+    padding: 12px 15px; /* Smaller padding */
+    margin-bottom: 12px;
+  }
+  .emergency-card h3 {
+    font-size: 1.1rem; /* Smaller heading */
+    flex-direction: column; /* Stack title and translation vertically */
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .emergency-steps li {
+    margin-bottom: 12px; /* Reduce step spacing */
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+  .step-image {
+    max-width: 100%; /* Ensure full width on mobile */
+    height: auto;
+    width: 100%; /* Force full width for better visibility */
+  }
+  .emergency-steps {
+    padding-left: 15px; /* Reduce list indent */
+  }
+  .emergency-list {
+    max-height: 350px; /* Reduce max-height for mobile viewport */
+  }
+
+  /* NEW: Mobile adjustments for Translations and Search */
+  .translation {
+    font-size: 0.85em; /* Slightly smaller on mobile to avoid overflow */
+    display: block; /* Stack translations below text if space is tight */
+    margin-left: 0;
+    margin-top: 2px;
+  }
+  .search-translation {
+    font-size: 0.9em; /* Smaller translation label */
+    margin-top: 3px;
+  }
+  .search-wrapper {
+    margin-bottom: 15px; /* Reduce search spacing */
+  }
+  .search-box {
+    font-size: 1rem; /* Slightly smaller input font */
+    padding: 10px 12px; /* Smaller padding */
+  }
+
+  /* Alarm-specific mobile adjustments (from original) */
+  .alarm-form-grid {
+    grid-template-columns: 1fr; /* Stack items vertically */
+  }
+
+  .alarm-item {
+    flex-direction: column; /* Stack content and button */
+    align-items: flex-start; /* Align text to the left */
+    gap: 10px; /* Space between text and button */
+  }
+
+  .alarm-item > div:first-child {
+    width: 100%; /* Ensure text takes full width */
+  }
+
+  .deleteAlarmBtn {
+    align-self: flex-end; /* Align delete button to the right */
+  }
+
+  .alarm-list {
+    max-height: 250px; /* Reduce for mobile */
+  }
+}
+
+/* End of Responsive Media Query */
+
+/* Additional utility classes for better organization (if needed) */
+.main-text-large {
+  font-size: 1.2rem;
+  color: #333;
+}
+.translated-phrase-large {
+  font-size: 1rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Ensure no overflow on very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  .feature-detail-container {
+    padding: 20px 15px;
+  }
+  .emergency-steps li {
+    padding: 0 5px; /* Extra padding for readability */
+  }
+}
+
+/* NEW: Translation Styles - Consistent for all bilingual elements */
+.translation {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #023e8a; /* Dark blue for light backgrounds (default for most of the site) */
+  margin-left: 5px;
+}
+.search-translation {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.95em;
+  color: #023e8a; /* Dark blue for light areas */
+}
+.search-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Overrides for Dark Background Areas */
+.navbar .translation {
+  color: #caf0f8; /* Light blue/white-ish for dark navbar background */
+}
+.emergency-contacts .translation {
+  color: #caf0f8; /* Light blue/white-ish for dark footer header; inner cards use default dark blue */
+}
+
+/* Mobile adjustments for translations (from previous responsive section) */
+@media (max-width: 768px) {
+  .translation {
+    font-size: 0.85em;
+    display: block; /* Stack below text */
+    margin-left: 0;
+    margin-top: 2px;
+  }
+  /* Ensure dark areas still override on mobile */
+  .navbar .translation,
+  .emergency-contacts .translation {
+    color: #caf0f8; /* Maintain light color on dark BGs */
+  }
+}
+
+/* Feature Detail Page (existing .btn-exit styles, with addition) */
+.btn-exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e63946;
+  color: white; /* Ensures main text (e.g., "Back") is white */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-exit:hover {
+  background: #d62828;
+}
+.btn-exit i {
+  font-size: 1rem;
+  color: white; /* Ensures icon is white */
+}
+
+/* NEW: Ensure translations inside exit buttons are white for contrast on red background */
+.btn-exit .translation {
+  color: white !important; /* Override general .translation rule; !important for specificity */
+  font-style: italic;
+  font-size: 0.9em;
+  margin-left: 5px;
+}
+
+/* Mobile adjustments for .btn-exit (from responsive section) */
+@media (max-width: 768px) {
+  .btn-exit {
+    position: static; /* Stack in flow */
+    margin-bottom: 20px;
+    width: 100%; /* Full width on mobile */
+    min-width: unset;
+  }
+  .btn-exit .translation {
+    color: white !important; /* Maintain white on mobile */
+    display: inline; /* Keep inline on mobile for button flow */
+  }
+}
+
+/* New: Disclaimer Styles */
+.disclaimer {
+  font-size: 1rem;
+  color: #023e8a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.translation {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #023e8a;
+  margin-left: 5px;
+}
